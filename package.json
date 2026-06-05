@@ -1,0 +1,19 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Enhanced English Language Calculator A user-friendly calculator application that not only performs mathematical computations but also expresses the results in natural English language. This tool bridges the gap between numerical output and linguistic comprehension. Key Features Natural Language Output",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}

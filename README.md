@@ -156,3 +156,11 @@ Potential features for future versions:
 - Calculation history
 - Dark/Light theme toggle
 - Mobile app version
+## CI/CD Pipeline
+
+This project uses GitHub Actions to:
+- Run tests (Jest)
+- Build the application
+- Automatically deploy to a live server via FTP
+
+Every push to `main` triggers a full pipeline.

@@ -7,7 +7,7 @@ const {
   rectangleArea,
   circleArea,
   cubeVolume
-} = require("../utils/math");
+} = require("../assets/js/math");
 
 describe("Basic Calculator Functions", () => {
 

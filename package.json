@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "mkdir -p dist && cp -r assets dist/ || true && cp index.html dist/"
+    "build": "rmdir /s /q dist && mkdir dist && copy index.html dist && copy calc.html dist && xcopy assets dist\\assets /E /I /Y"
   },
   "keywords": [],
   "author": "",

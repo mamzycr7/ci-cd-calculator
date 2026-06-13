@@ -14,23 +14,6 @@ function divide(a, b) {
   return a / b;
 }
 
-// Geometry
-function squareArea(s) {
-  return multiply(s, s);
-}
-
-function rectangleArea(l, w) {
-  return multiply(l, w);
-}
-
-function circleArea(r) {
-  return multiply(Math.PI, multiply(r, r));
-}
-
-function cubeVolume(s) {
-  return Math.pow(s, 3);
-}
-
 /* =========================
    EXPORT FOR JEST (Node)
 ========================= */

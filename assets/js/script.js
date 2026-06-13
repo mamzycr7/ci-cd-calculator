@@ -60,6 +60,10 @@ function appendToResult(value) {
   updateResult();
 }
 
+function pi (value) {
+  appendToResult(Math.PI);
+}
+
 function bracketToResult(value) {
   currentExpression += value;
   updateResult();
@@ -186,128 +190,3 @@ function updateResult() {
   document.getElementById("result").value = currentExpression || "0";
 }
 
-// ===============================
-// 📐 GEOMETRY MODAL FEATURE
-// ===============================
-
-// Open modal
-function openGeoModal() {
-  const modal = new bootstrap.Modal(document.getElementById("geoModal"));
-  modal.show();
-}
-
-// Dynamic inputs based on shape
-document.addEventListener("change", function (e) {
-  if (e.target.id === "shape") {
-    renderInputs(e.target.value);
-  }
-});
-
-function renderInputs(shape) {
-  const area = document.getElementById("inputsArea");
-
-  switch (shape) {
-    case "square":
-      area.innerHTML = `<input id="side" class="form-control" placeholder="Side length">`;
-      break;
-
-    case "rectangle":
-      area.innerHTML = `
-        <input id="length" class="form-control mb-2" placeholder="Length">
-        <input id="width" class="form-control" placeholder="Width">
-      `;
-      break;
-
-    case "circle":
-      area.innerHTML = `<input id="radius" class="form-control" placeholder="Radius">`;
-      break;
-
-    case "cube":
-      area.innerHTML = `<input id="side" class="form-control" placeholder="Side length">`;
-      break;
-
-    case "cylinder":
-      area.innerHTML = `
-        <input id="radius" class="form-control mb-2" placeholder="Radius">
-        <input id="height" class="form-control" placeholder="Height">
-      `;
-      break;
-  }
-}
-
-function computeGeometry() {
-  const shape = document.getElementById("shape").value;
-  const op = document.getElementById("operation").value;
-
-  let result = 0;
-
-  switch (shape) {
-
-    case "square": {
-      const s = parseFloat(document.getElementById("side").value);
-
-      if (op === "area") result = MathLib.squareArea(s);
-      if (op === "perimeter") result = MathLib.multiply(4, s);
-      break;
-    }
-
-    case "rectangle": {
-      const l = parseFloat(document.getElementById("length").value);
-      const w = parseFloat(document.getElementById("width").value);
-
-      if (op === "area") result = MathLib.rectangleArea(l, w);
-      if (op === "perimeter") result = MathLib.multiply(2, MathLib.add(l, w));
-      break;
-    }
-
-    case "circle": {
-      const r = parseFloat(document.getElementById("radius").value);
-
-      if (op === "area") result = MathLib.circleArea(r);
-      if (op === "perimeter") result = MathLib.multiply(2, MathLib.multiply(Math.PI, r));
-      break;
-    }
-
-    case "cube": {
-      const s = parseFloat(document.getElementById("side").value);
-
-      if (op === "area") result = MathLib.multiply(6, MathLib.squareArea(s));
-      if (op === "perimeter") result = MathLib.multiply(12, s);
-      if (op === "volume") result = MathLib.cubeVolume(s);
-      break;
-    }
-
-    case "cylinder": {
-      const r = parseFloat(document.getElementById("radius").value);
-      const h = parseFloat(document.getElementById("height").value);
-
-      if (op === "area") {
-        result = MathLib.multiply(
-          2 * Math.PI,
-          MathLib.add(MathLib.squareArea(r), MathLib.multiply(r, h))
-        );
-      }
-
-      if (op === "volume") {
-        result = MathLib.multiply(Math.PI, MathLib.multiply(MathLib.squareArea(r), h));
-      }
-
-      break;
-    }
-  }
-
-  if (isNaN(result)) {
-    alert("Invalid input");
-    return;
-  }
-
-  result = Number(result.toFixed(2));
-
-  LAST_RESULT = result;
-  currentExpression = result.toString();
-  updateResult();
-
-  const resBox = document.getElementById("geoResult");
-  resBox.classList.remove("d-none");
-  resBox.innerText = "Result: " + result;
-}

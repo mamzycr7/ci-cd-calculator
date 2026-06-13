@@ -14,6 +14,10 @@ function divide(a, b) {
   return a / b;
 }
 
+function pi() {
+  return Math.PI;
+}
+
 /* =========================
    EXPORT FOR JEST (Node)
 ========================= */
@@ -23,10 +27,7 @@ if (typeof module !== "undefined") {
     subtract,
     multiply,
     divide,
-    squareArea,
-    rectangleArea,
-    circleArea,
-    cubeVolume
+    pi
   };
 }
 
@@ -39,9 +40,6 @@ if (typeof window !== "undefined") {
     subtract,
     multiply,
     divide,
-    squareArea,
-    rectangleArea,
-    circleArea,
-    cubeVolume
+    pi
   };
 }

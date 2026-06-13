@@ -3,10 +3,7 @@ const {
   subtract,
   multiply,
   divide,
-  squareArea,
-  rectangleArea,
-  circleArea,
-  cubeVolume
+  pi
 } = require("../assets/js/math");
 
 describe("Basic Calculator Functions", () => {
@@ -29,22 +26,11 @@ describe("Basic Calculator Functions", () => {
 
 });
 
-// describe("Geometry Functions", () => {
+describe("Pi Function", () => {
 
-//   test("square area", () => {
-//     expect(squareArea(4)).toBe(16);
-//   });
+  test("pi", () => {
+    expect(pi()).toBeCloseTo(3.14159, 5);
+  });
 
-//   test("rectangle area", () => {
-//     expect(rectangleArea(4, 5)).toBe(20);
-//   });
 
-//   test("circle area", () => {
-//     expect(circleArea(3)).toBeCloseTo(28.274, 2);
-//   });
-
-//   test("cube volume", () => {
-//     expect(cubeVolume(3)).toBe(27);
-//   });
-
-// });
+});

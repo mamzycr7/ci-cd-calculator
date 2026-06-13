@@ -32,5 +32,4 @@ describe("Pi Function", () => {
     expect(pi()).toBeCloseTo(3.14159, 5);
   });
 
-
 });

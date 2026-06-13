@@ -60,7 +60,7 @@ function appendToResult(value) {
   updateResult();
 }
 
-function pi (value) {
+function pi () {
   appendToResult(Math.PI);
 }
 

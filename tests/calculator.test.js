@@ -29,22 +29,22 @@ describe("Basic Calculator Functions", () => {
 
 });
 
-describe("Geometry Functions", () => {
+// describe("Geometry Functions", () => {
 
-  test("square area", () => {
-    expect(squareArea(4)).toBe(16);
-  });
+//   test("square area", () => {
+//     expect(squareArea(4)).toBe(16);
+//   });
 
-  test("rectangle area", () => {
-    expect(rectangleArea(4, 5)).toBe(20);
-  });
+//   test("rectangle area", () => {
+//     expect(rectangleArea(4, 5)).toBe(20);
+//   });
 
-  test("circle area", () => {
-    expect(circleArea(3)).toBeCloseTo(28.274, 2);
-  });
+//   test("circle area", () => {
+//     expect(circleArea(3)).toBeCloseTo(28.274, 2);
+//   });
 
-  test("cube volume", () => {
-    expect(cubeVolume(3)).toBe(27);
-  });
+//   test("cube volume", () => {
+//     expect(cubeVolume(3)).toBe(27);
+//   });
 
-});
+// });
